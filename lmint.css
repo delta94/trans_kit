@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=vietnamese');
+
+/* General CSS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: rgba(0, 0, 0, .8);
+  background-color: #f5f7fc;
+}
+
+nav {
+  background-color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mg-0 { margin: 0 }
+.pd-0 { margin: 0 }
+
+/* Text colors */
+.red { color: #ff001f }
+.blue { color: #0081ff }
+.green { color: #0ad851 }
+.yellow { color: #ffbb00 }
+.gray { color: #00000099 }
+
+/* Border Color */
+.b-red { border: 1px solid #ff001f }
+.b-blue { border: 1px solid #0081ff }
+.b-green { border: 1px solid #0ad851 }
+.b-yellow { border: 1px solid #ffbb00 }
+.b-gray { border: 1px solid #00000099 }
+.b-black { border: 1px solid #000000 }
+
+/* Background-color */
+.bg-white { background-color: white; }
+
+/* Text Effects */
+.t-upper { text-transform: uppercase; }
+.t-bold { font-weight: 700; }
+.t-center { text-align: center; }
+
+/* Display Mode */
+.d-flex { display: flex; }
+.d-flex-direction { display: flex; flex-direction: column; }
+.d-flex-center-2 { 
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container & Boxes */
+.container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-gap: 1rem;
+  padding: 2rem 3rem;
+}
+
+.box {
+  position: relative;
+  border-radius: 3px;
+  padding: 1rem 1.2rem;
+  background-color: white;
+  transition: 180ms ease-out;
+}
+
+.box:hover {
+  transform: translate(1px, -1px);
+  box-shadow: 16px 27px 58px 0px rgba(213, 216, 222, 0.6);
+}
+
+.box-badge {
+  font-size: 14px;
+  padding: 10px 16px;
+  background-color: white;
+  position: absolute;
+  top: -1rem;
+  right: -.6rem;
+  z-index: 1000;
+  border-radius: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+}
+
+/* Buttons */
+/* Auto Border Radius Button */
+.btn-auto-radius {
+  margin: 1rem 0;
+  padding: 4px 12px;
+  display: inline-flex;
+  border-radius: 4px;
+  transition: 500ms ease;
+  border-width: 2px;
+  cursor: pointer;
+}
+
+.btn-auto-radius:hover {
+  border-radius: 2rem;
+}
+
+.btn-auto-radius:active {
+  transform: scale(.9);
+}
+
+.btn-auto-radius img {
+  height: 22px;
+  margin-left: 8px;
+}

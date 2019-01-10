@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+  <link rel="stylesheet" href="lmint.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Data Global Performance</title>
+</head>
+<body>
+
+  <nav>
+    <h2 class="mg-0 blue">Data Entry Tools</h2>
+  </nav>
+
+  <div class="container">
+    
+    <div class="box separate-line d-flex-direction d-flex-center-2">
+      <div class="box-badge red">New</div>
+      <textarea id="text-separate" placeholder="Enter something to separate line..."></textarea>
+      <div class="features">
+        <input type="text" id="comp-name-separate" placeholder="{CompanyName}">
+        <input type="text" id="text-strong" placeholder="<Strong>">
+        <button id="comp-replace-separate" class="btn-auto-radius b-gray gray">{Comp}</button>
+        <button class="btn-auto-radius b-blue blue" id="btn-separate">Break</button>
+        <button id="btn-mailto" class="btn-auto-radius b-blue blue">Mail</button>
+        <button id="btn-fix-link" class="btn-auto-radius b-blue blue">Link</button>
+        <button id="btn-strong" class="btn-auto-radius b-blue blue">Strong</button>
+      </div>
+    </div>
+
+    <div class="box un-break d-flex-direction d-flex-center-2">
+      <textarea id="text-unbreak" placeholder="Enter something to separate line..."></textarea>
+      <div class="features">
+        <button class="btn-auto-radius b-blue blue" id="btn-unbreak">unBreak</button>
+      </div>
+    </div>
+
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>

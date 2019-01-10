@@ -1,0 +1,42 @@
+/* Grid Templates */
+.separate-line {
+  grid-column: 1 / 13;
+}
+
+.un-break {
+  grid-column: 13 / 17;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  color: dodgerblue;
+  font-size: 13px;
+  border: 1px solid rgba(30, 143, 255, 0.8);
+  padding: 8px 10px;
+  border-radius: 6px;
+  width: 96%;
+  min-height: 200px;
+}
+
+textarea::placeholder {
+  color: dodgerblue;
+  font-weight: 300;
+}
+
+#comp-name-separate, #text-strong, button {
+  padding: 6px 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.features input {
+  border: none;
+  background-color: dodgerblue;
+  border-radius: 2px;
+  color: white;
+}
+
+.features input::placeholder {
+  color: white;
+}
