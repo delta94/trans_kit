@@ -17,26 +17,26 @@ const compTemp = /{CompanyName}{1}.*/g;
 const urlTemp = /http(s)*:\/\/([a-z0-9]+((\.)*[a-z0-9]+)+)+(\/[a-z0-9]+)*(\/)*/g;
 
 separateBtn.addEventListener('click', () => {
-	let content = separateBox.value;
-	let nextContent = content.split('').map(char => {
-		return (char === '\n') ? '\n\n' : char;
+	let chars = separateBox.value.split('');
+	let nextContent = chars.map((char, index) => {
+		return (char === '\n' && chars[index + 1] !== '\n') ? '\n\n' : char;
 	});
 	separateBox.value = nextContent.join('');
 });
 
 separateComp.addEventListener('click', () => {
 	let content = separateBox.value;
+	// console.log(content.split(' '));
 	let nextContent = content.split(' ').map(char => {
-		return (compTemp.test(char) && compName.value !== '') ? compName.value : char;
+		return (compTemp.test(char) && compName.value !== '') ? char.replace(/{CompanyName}{1}/, compName.value) : char;
 	});
 	separateBox.value = nextContent.join(' ');
 });
 
 mailto.addEventListener('click', () => {
 	let content = separateBox.value;
-	let mail = content.match(mailTemp)[0];
 	let nextContent = content.split(' ').map(char => {
-		return (mailTemp.test(char)) ? `<a href="mailto:${mail}">${mail}</a>` : char;
+		return (mailTemp.test(char)) ? char.replace(mailTemp, `<a href="mailto:${char.match(mailTemp)[0]}">${char.match(mailTemp)[0]}</a>`) : char;
 	});
 	separateBox.value = nextContent.join(' ');
 });
@@ -45,18 +45,18 @@ btnFixlink.addEventListener('click', () => {
 	let content = separateBox.value.trim();
 	console.log(content.split(' '));
 	let nextContent = content.split(' ').map(char => {
-		return (urlTemp.test(char)) ? `<a href="${char.match(urlTemp)[0]}" title="${char.match(urlTemp)[0]}">${char.match(urlTemp)[0]}</a>` : char;
+		return (urlTemp.test(char)) ? char.replace(urlTemp, `<a href="${char.match(urlTemp)[0]}" title="${char.match(urlTemp)[0]}">${char.match(urlTemp)[0]}</a>`) : char;
 	});
 	separateBox.value = nextContent.join(' ');
 });
 
 btnUnbreak.addEventListener('click', () => {
-	let content = unBreakBox.value;
+	let content = separateBox.value;
 	let arr = content.split('');
 	let nextContent = arr.map((char, index) => {
 		return (char === '\n' && arr[index + 1] === '\n') ? null : char; 
 	});
-	unBreakBox.value = nextContent.join('');
+	separateBox.value = nextContent.join('');
 });
 
 btnStrong.addEventListener('click', () => {
